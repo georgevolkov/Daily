@@ -1,0 +1,20 @@
+﻿<div id="loader" class="loading" v-if="loader"></div>
+<div class="row d-flex justify-content-center" v-if="seen">
+    <input id="pageNumber" type="hidden" name="name" v-bind:value="page" />
+    <div class="card" v-for="model in items">
+        <a :href="model.url" id="getVideo" target="_blank">
+            <input type="hidden" id="answerId" v-model="model.id" />
+            <div class="card-body">
+                <h5 class="card-title">{{ model.name }}</h5>
+                <p class="card-description">{{ model.age }}</p>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="row d-flex justify-content-center" id="notFoundOrNoContent" v-if="notFound">
+    <div class="content-fluid text-center vertical-align-div">
+        <span class="vertical-align-span">No Content</span>
+    </div>
+</div>
+<script src="~/js/site.js"></script>
+

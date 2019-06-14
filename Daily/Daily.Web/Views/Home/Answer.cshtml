@@ -1,0 +1,84 @@
+﻿@using Questionnaire.Web.Models
+@model AnswerViewModel
+@{
+    ViewData["Title"] = "Answer";
+}
+
+<section id="tabs">
+    <div class="container">
+        <h6 class="section-title h1">Анкета</h6>
+        <div class="row">
+            <div class="col-md-12 ">
+                <nav>
+                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-name-tab" data-toggle="tab" href="#nav-name" role="tab" aria-controls="nav-name" aria-selected="true">Имя</a>
+                        <a class="nav-item nav-link" id="nav-age-tab" data-toggle="tab" href="#nav-age" role="tab" aria-controls="nav-age" aria-selected="false">Возраст</a>
+                        <a class="nav-item nav-link" id="nav-sex-tab" data-toggle="tab" href="#nav-sex" role="tab" aria-controls="nav-sex" aria-selected="false">Пол</a>
+                        <a class="nav-item nav-link" id="nav-date-tab" data-toggle="tab" href="#nav-date" role="tab" aria-controls="nav-date" aria-selected="false">Дата рождения</a>
+                        <a class="nav-item nav-link" id="nav-status-tab" data-toggle="tab" href="#nav-status" role="tab" aria-controls="nav-status" aria-selected="false">Статус</a>
+                        <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#nav-last" role="tab" aria-controls="nav-last" aria-selected="false">Программирование</a>
+                        <a class="nav-item nav-link" id="nav-send-tab" data-toggle="tab" href="#nav-send" role="tab" aria-controls="nav-send" aria-selected="false">Отправить</a>
+                    </div>
+                </nav>
+
+                <form asp-controller="Home" asp-action="Answer" method="post">
+                    <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-name" role="tabpanel" aria-labelledby="nav-name-tab">
+                            <label asp-for="Answer.Name">Введите ваше имя</label>
+                            <input asp-for="Answer.Name" class="form-control" />
+                            <span asp-validation-for="Answer.Name" class="text-danger" />
+                        </div>
+                        <div class="tab-pane fade" id="nav-age" role="tabpanel" aria-labelledby="nav-age-tab">
+                            <label asp-for="Answer.Age">Введите ваш возраст</label>
+                            <input asp-for="Answer.Age" class="form-control" type="number" />
+                            <span asp-validation-for="Answer.Name" class="text-danger" />
+                        </div>
+                        <div class="tab-pane fade" id="nav-sex" role="tabpanel" aria-labelledby="nav-sex-tab">
+                            <label asp-for="Answer.Sex">Выберите ваш пол</label>
+                            <select class="form-control" asp-for="Answer.Sex" asp-items="Html.GetEnumSelectList<Questionnaire.Data.Enums.Sex>()">
+                                <option selected="selected" value="">Please select</option>
+                            </select>
+                            <span asp-validation-for="Answer.Name" class="text-danger" />
+                        </div>
+                        <div class="tab-pane fade" id="nav-date" role="tabpanel" aria-labelledby="nav-date-tab">
+                            <label asp-for="Answer.BirthDate">Выберите ваш день рождения</label>
+                            <input asp-for="Answer.BirthDate" class="form-control" type="date" />
+                            <span asp-validation-for="Answer.Name" class="text-danger" />
+                        </div>
+                        <div class="tab-pane fade" id="nav-status" role="tabpanel" aria-labelledby="nav-status-tab">
+                            <label asp-for="Answer.Status">Выберите ваше семейное положение</label>
+                            <select class="form-control" asp-for="Answer.Status" asp-items="Html.GetEnumSelectList<Questionnaire.Data.Enums.Status>()">
+                                <option selected="selected" value="">Please select</option>
+                            </select>
+                            <span asp-validation-for="Answer.Name" class="text-danger" />
+                        </div>
+                        <div class="tab-pane fade" id="nav-last" role="tabpanel" aria-labelledby="nav-last-tab">
+                            <label asp-for="Answer.IsLikeProgramming">Вы любите программирование?</label>
+                            <select class="form-control" asp-for="Answer.IsLikeProgramming">
+                                <option selected="selected" value="">Please select</option>
+                                <option value="true">Да</option>
+                                <option value="false">Нет</option>
+                            </select>
+                            <span asp-validation-for="Answer.Name" class="text-danger" />
+                        </div>
+                        <div class="tab-pane fade" id="nav-send" role="tabpanel" aria-labelledby="nav-send-tab">
+                            <input id="send" class="form-control" type="submit" value="Отправить" />
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(document).ready(function () {
+        $(window).keydown(function (event) {
+            if (event.keyCode == 13) {
+                event.preventDefault();
+                return false;
+            }
+        });
+    });
+</script>

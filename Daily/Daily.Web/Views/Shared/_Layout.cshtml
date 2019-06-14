@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/jquery-ajax-unobtrusive/src/jquery.unobtrusive-ajax.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="models">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+            <div class="container">
+                <a id="brand" class="navbar-brand" href="/Home">Home</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse show" id="navbarsExample04" style="">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li>
+                                <a id="brand" class="navbar-brand" asp-controller="Home" asp-action="Answer">Анкета</a>
+                            </li>
+                        }
+                        
+                    </ul>
+                    <div>
+                        <input value="@ViewBag.SearchQuery" name="query" class="form-control" type="text" v-model="query" placeholder="Search">
+                    </div>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <p class="text-white">@User.Identity.Name</p>
+
+                        <form method="post" asp-controller="Account" asp-action="LogOff">
+                            <input type="submit" value="Выйти" />
+                        </form>
+                    }
+                    else
+                    {
+                        <a class="text-white" asp-controller="Account" asp-action="Login">Войти</a>
+                        <a class="text-white" asp-controller="Account" asp-action="Register">Регистрация</a>
+                    }
+                </div>
+            </div>
+        </nav>
+
+        <div class="container body-content" v-if="models">
+            @RenderBody()
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            @if (DateTime.Now.Year == 2019)
+            {
+                <span class="text-muted">&copy; 2019 - App</span>
+            }
+            else
+            {
+                <span class="text-muted">&copy; 2019 - @DateTime.Now.Year - App</span>
+            }
+        </div>
+    </footer>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
