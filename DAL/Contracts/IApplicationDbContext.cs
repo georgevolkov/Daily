@@ -1,11 +1,12 @@
 ﻿using System.Data.Entity;
 using Daily.Core;
+using Daily.Core.Models;
 
-namespace DAL.Contracts
+namespace Daily.DAL.Contracts
 {
     public interface IApplicationDbContext
     {
         DbSet<Users> Users { get; set; }
-        DbSet<Daily> Dailies { get; set; }
+        DbSet<Core.Models.Daily> Dailies { get; set; }
     }
 }
