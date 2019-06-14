@@ -3,4 +3,22 @@
 @{
     ViewData["Title"] = "Daily";
 }
-<h2>Daily</h2>
+<h2>Ежедневка</h2>
+<form action="Daily" method="post">
+    <label>Вчера</label> <br />
+    <textarea class="form-control" asp-for="Daily.Yesterday"></textarea>
+    <hr />
+    <label>Сегодня</label> <br />
+    <textarea class="form-control" asp-for="Daily.Today"></textarea>
+    <hr />
+    <label>Не сделано</label> <br />
+    <textarea class="form-control" asp-for="Daily.NotDone"></textarea>
+    <hr />
+    <label>Проблемы</label> <br />
+    <textarea class="form-control" asp-for="Daily.Problems"></textarea>
+    <hr />
+    <label>Строчки кода</label> <br />
+    <textarea class="form-control" asp-for="Daily.LinesOfCode"></textarea>
+    <hr />
+    <input type="submit" name="name" value="Сохранить" />
+</form>

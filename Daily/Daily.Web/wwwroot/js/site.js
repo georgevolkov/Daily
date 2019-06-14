@@ -53,21 +53,30 @@ $(document).ready(function () {
             },
             addItems() {
                 // without _this variable push method don't work
+                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', second: 'numeric' };
                 var _this = this;
                 this.isLoading(true);
                 axios.get(`/Home/GetData/?pageNumber=${this.page}&query=${this.getQuery()}`)
                     .then((response) => {
+                            console.log(response);
+
                         if (response.data.data.length > 0) {
                             this.notFound = false;
                             this.seen = true;
-                            console.log(response);
                             response.data.data.forEach(function (item) {
-                                item.url = `/Home/About/?answerId=${item.id}`;
+                                let date = new Date(item.date);
+                                item.date = new Intl.DateTimeFormat('ru-RU', options).format(date);
+
+                                item.url = `/Home/About/?dailyId=${item.id}`;
                                 _this.items.push(item);
                             });
                             this.page++;
                         }
                         if (response.data.filtered === 0 && response.data.total === 0) {
+                            this.seen = false;
+                            this.notFound = true;
+                        }
+                        if (response.data.filtered === 0 && response.data.total > 0) {
                             this.seen = false;
                             this.notFound = true;
                         }

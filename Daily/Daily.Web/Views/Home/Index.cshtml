@@ -6,14 +6,14 @@
             <input type="hidden" id="answerId" v-model="model.id" />
             <div class="card-body">
                 <h5 class="card-title">{{ model.date }}</h5>
-                <p class="card-description">{{ model.after }}</p>
+                <p class="card-description">{{ model.today }}</p>
             </div>
         </a>
     </div>
 </div>
 <div class="row d-flex justify-content-center" id="notFoundOrNoContent" v-if="notFound">
     <div class="content-fluid text-center vertical-align-div">
-        <span class="vertical-align-span">No Content</span>
+        <span class="vertical-align-span">Ничего не найдено</span>
     </div>
 </div>
 <script src="~/js/site.js"></script>

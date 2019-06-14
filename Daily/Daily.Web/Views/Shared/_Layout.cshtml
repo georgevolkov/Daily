@@ -29,27 +29,27 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li>
-                                <a id="brand" class="navbar-brand" asp-controller="Home" asp-action="Answer">Анкета</a>
+                                <a id="brand" class="navbar-brand" asp-controller="Home" asp-action="Daily">Добавить ежедневку</a>
                             </li>
                         }
                         
                     </ul>
                     <div>
-                        <input value="@ViewBag.SearchQuery" name="query" class="form-control" type="text" v-model="query" placeholder="Search">
+                        <input value="@ViewBag.SearchQuery" name="query" class="form-control p-2" type="text" v-model="query" placeholder="Search">
                     </div>
 
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <p class="text-white">@User.Identity.Name</p>
+                        <p class="text-white p-2">@User.Identity.Name</p>
 
                         <form method="post" asp-controller="Account" asp-action="LogOff">
-                            <input type="submit" value="Выйти" />
+                            <input class="btn btn-primary form-control p-2" type="submit" value="Выйти" />
                         </form>
                     }
                     else
                     {
-                        <a class="text-white" asp-controller="Account" asp-action="Login">Войти</a>
-                        <a class="text-white" asp-controller="Account" asp-action="Register">Регистрация</a>
+                        <a class="btn btn-primary text-white p-2" asp-controller="Account" asp-action="Login">Войти</a> <p> | </p>
+                        <a class="btn btn-primary text-white p-2" asp-controller="Account" asp-action="Register">Регистрация</a>
                     }
                 </div>
             </div>

@@ -28,7 +28,8 @@ namespace Daily.Web.Controllers
         public async Task<JsonResult> GetData(int pageNumber, string query, int sort)
         {
             var pageSize = 20;
-            var models = await GetData(pageSize, pageNumber, query);
+            var currentUser = await _userManager.GetUserAsync(HttpContext.User);
+            var models = await GetData(pageSize, pageNumber, Guid.Parse(currentUser.Id), query);
 
 
             return Json(new { models.Data, total = models.RecordsTotal, filtered = models.RecordsFiltered });
@@ -46,7 +47,8 @@ namespace Daily.Web.Controllers
             {
                 var currentUser = await _userManager.GetUserAsync(HttpContext.User);
                 model.Daily.UserId = Guid.Parse(currentUser.Id);
-
+                model.Daily.Date = DateTime.Now;
+                
                 await _dailyService.AddDailyAsync(model.Daily);
                 return RedirectToAction("Index");
             }

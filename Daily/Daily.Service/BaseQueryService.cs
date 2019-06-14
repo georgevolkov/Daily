@@ -23,6 +23,7 @@ namespace Daily.Service
 
         protected abstract IQueryable<TEntity> Order(IQueryable<TEntity> items, bool isFirst, QueryOrder<TSortType> order);
         protected abstract IQueryable<TEntity> Search(IQueryable<TEntity> items, QuerySearch search);
+        protected abstract IQueryable<TEntity> UserDailies(IQueryable<TEntity> items, QueryUser userId);
         #endregion
 
         public virtual Task<QueryResponse<TModel>> GetAsync(QueryRequest<TSortType> query) => GetAsync(query, _uow.GetRepository<TEntity>().All());
@@ -38,6 +39,8 @@ namespace Daily.Service
             result.RecordsTotal = items.Count();
             // order items
             items = Order(items, query.OrderQueries);
+            // get user dailies
+            items = UserDailies(items, query.UserDailies);
             // paging
             items = Paging(items, query.Start, query.Length);
             // get filtered items list

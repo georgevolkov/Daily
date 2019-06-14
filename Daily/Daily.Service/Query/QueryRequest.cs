@@ -11,5 +11,6 @@ namespace Daily.Service.Query
         public IEnumerable<string> Includes { get; set; }
         public QuerySearch Category { get; set; }
         public QuerySearch SourceOrder { get; set; }
+        public QueryUser UserDailies { get; set; }
     }
 }

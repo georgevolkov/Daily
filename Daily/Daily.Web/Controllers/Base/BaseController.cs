@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Daily.Data.Enums;
@@ -31,7 +32,7 @@ namespace Daily.Web.Controllers.Base
             _mapper = mapper;
         }
 
-        protected async Task<QueryResponse<DailyModel>> GetData(int pageSize, int pageNumber, string query = null)
+        protected async Task<QueryResponse<DailyModel>> GetData(int pageSize, int pageNumber, Guid userId, string query = null)
         {
             return await _dailyService.GetAsync(new QueryRequest<SortType>
             {
@@ -48,6 +49,10 @@ namespace Daily.Web.Controllers.Base
                 Search = new QuerySearch
                 {
                     Value = query
+                },
+                UserDailies = new QueryUser
+                {
+                    Value = userId
                 }
             });
         }

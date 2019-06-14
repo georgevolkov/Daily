@@ -66,6 +66,11 @@ namespace Daily.Service
             }
             return items;
         }
-        
+
+        protected override IQueryable<Data.Entities.Daily> UserDailies(IQueryable<Data.Entities.Daily> items,
+            QueryUser userId)
+        {
+            return items.Where(x => x.UserId == userId.Value);
+        }
     }
 }

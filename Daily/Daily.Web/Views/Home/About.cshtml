@@ -4,15 +4,15 @@
     ViewData["Title"] = "About daily";
 }
 
-<label asp-for="Daily.Date">Дата: 
+<label asp-for="Daily.Date"><strong>Дата:</strong> 
     @Html.DisplayFor(x => x.Daily.Date)</label><br />
-<label asp-for="Daily.Yesterday">Вчера: 
+<label asp-for="Daily.Yesterday"><strong>Вчера:</strong> <br />
     @Html.DisplayTextFor(x => x.Daily.Yesterday)</label><br />
-<label asp-for="Daily.Today">Сегодня: 
+<label asp-for="Daily.Today"><strong>Сегодня:</strong> <br />
     @Html.DisplayTextFor(x => x.Daily.Today)</label><br />
-<label asp-for="Daily.NotDone">Не сделано:
+<label asp-for="Daily.NotDone"><strong>Не сделано:</strong><br />
     @Html.DisplayTextFor(x => x.Daily.NotDone)</label><br />
-<label asp-for="Daily.Problems">Проблемы:
+<label asp-for="Daily.Problems"><strong>Проблемы:</strong><br />
     @Html.DisplayTextFor(x => x.Daily.LinesOfCode)</label><br />
-<label asp-for="Daily.LinesOfCode">Строчки кода: 
+<label asp-for="Daily.LinesOfCode"><strong>Строчки кода:</strong> <br />
     @Html.DisplayTextFor(x => x.Daily.LinesOfCode)</label>
