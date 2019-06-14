@@ -1,9 +1,9 @@
-﻿using Questionnaire.Service.Enums;
+﻿using Daily.Service.Enums;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Questionnaire.Service.Extensions
+namespace Daily.Service.Extensions
 {
     public static class QueryableExtensions
     {

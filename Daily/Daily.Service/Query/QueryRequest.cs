@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Questionnaire.Service.Query
+namespace Daily.Service.Query
 {
     public class QueryRequest<TSortType>
     {

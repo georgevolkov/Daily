@@ -1,4 +1,4 @@
-﻿namespace Questionnaire.Data.Interfaces
+﻿namespace Daily.Data.Interfaces
 {
     public interface IEntityBase
     {

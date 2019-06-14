@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using Questionnaire.Data.Interfaces;
-using Questionnaire.Service.Query;
-using Questionnaire.Service.Interfaces;
+using Daily.Data.Interfaces;
+using Daily.Service.Query;
+using Daily.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Questionnaire.Service
+namespace Daily.Service
 {
     public abstract class BaseQueryService<TEntity, TModel, TSortType> : BaseService, IBaseQueryService<TEntity, TModel, TSortType>
         where TEntity : class, IEntityBase, new()

@@ -2,18 +2,19 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Questionnaire.Service.Interfaces;
-using Questionnaire.Web.Controllers.Base;
-using Questionnaire.Web.Models;
+using Daily.Service.Interfaces;
+using Daily.Web.Controllers.Base;
+using Daily.Web.Models;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace Questionnaire.Web.Controllers
+namespace Daily.Web.Controllers
 {
+    [Authorize]
     public class HomeController : BaseController
     {
-        public HomeController(IMapper mapper, IAnswerService answerService, UserManager<User> userManager)
+        public HomeController(IMapper mapper, IDailyService answerService, UserManager<User> userManager)
             : base(mapper, answerService, userManager) { }
 
         public IActionResult Index(string query)
@@ -27,40 +28,37 @@ namespace Questionnaire.Web.Controllers
         public async Task<JsonResult> GetData(int pageNumber, string query, int sort)
         {
             var pageSize = 20;
-            var models = await GetData(pageSize, pageNumber, sort, query);
+            var models = await GetData(pageSize, pageNumber, query);
 
 
             return Json(new { models.Data, total = models.RecordsTotal, filtered = models.RecordsFiltered });
         }
         
-        [Authorize]
-        public IActionResult Answer()
+        public IActionResult Daily()
         {
             return View();
         }
 
         [HttpPost]
-        [Authorize]
-        public async Task<IActionResult> Answer(AnswerViewModel model)
+        public async Task<IActionResult> Daily(DailyViewModel model)
         {
             if (ModelState.IsValid)
             {
                 var currentUser = await _userManager.GetUserAsync(HttpContext.User);
-                model.Answer.UserId = Guid.Parse(currentUser.Id);
+                model.Daily.UserId = Guid.Parse(currentUser.Id);
 
-                await _answerService.AddAnswerAsync(model.Answer);
+                await _dailyService.AddDailyAsync(model.Daily);
                 return RedirectToAction("Index");
             }
             return View(model);
         }
 
-        [Authorize]
-        public async Task<IActionResult> About(string answerId)
+        public async Task<IActionResult> About(string dailyId)
         {
-            var answer = await _answerService.GetAnswerByIdAsync(Guid.Parse(answerId));
-            var viewModel = new AnswerViewModel
+            var daily = await _dailyService.GetDailyByIdAsync(Guid.Parse(dailyId));
+            var viewModel = new DailyViewModel
             {
-                Answer = answer
+                Daily = daily
             };
             return View(viewModel);
         }

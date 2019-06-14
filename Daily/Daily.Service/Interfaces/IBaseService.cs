@@ -1,4 +1,4 @@
-﻿namespace Questionnaire.Service.Interfaces
+﻿namespace Daily.Service.Interfaces
 {
     public interface IBaseService
     {

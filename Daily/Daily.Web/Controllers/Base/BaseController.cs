@@ -1,20 +1,20 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Questionnaire.Data.Enums;
-using Questionnaire.Service.Enums;
-using Questionnaire.Service.Interfaces;
-using Questionnaire.Service.Models;
-using Questionnaire.Service.Query;
-using Questionnaire.Web.Models;
+using Daily.Data.Enums;
+using Daily.Service.Enums;
+using Daily.Service.Interfaces;
+using Daily.Service.Models;
+using Daily.Service.Query;
+using Daily.Web.Models;
 using System.Threading.Tasks;
 
-namespace Questionnaire.Web.Controllers.Base
+namespace Daily.Web.Controllers.Base
 {
     public class BaseController : Controller
     {
         protected readonly IMapper _mapper;
-        protected readonly IAnswerService _answerService;
+        protected readonly IDailyService _dailyService;
         protected readonly UserManager<User> _userManager;
         protected readonly SignInManager<User> _signInManager;
 
@@ -24,16 +24,16 @@ namespace Questionnaire.Web.Controllers.Base
             _signInManager = signInManager;
         }
 
-        public BaseController(IMapper mapper, IAnswerService answerService, UserManager<User> userManager)
+        public BaseController(IMapper mapper, IDailyService dailyService, UserManager<User> userManager)
         {
             _userManager = userManager;
-            _answerService = answerService;
+            _dailyService = dailyService;
             _mapper = mapper;
         }
 
-        protected async Task<QueryResponse<AnswerModel>> GetData(int pageSize, int pageNumber, int sort, string query = null)
+        protected async Task<QueryResponse<DailyModel>> GetData(int pageSize, int pageNumber, string query = null)
         {
-            return await _answerService.GetAsync(new QueryRequest<SortType>
+            return await _dailyService.GetAsync(new QueryRequest<SortType>
             {
                 Start = (pageSize * (pageNumber - 1)),
                 Length = pageSize,
@@ -42,7 +42,7 @@ namespace Questionnaire.Web.Controllers.Base
                     new QueryOrder<SortType>
                     {
                         Direction = SortDirectionType.Descending,
-                        OrderType = sort == 0 ? SortType.Name : SortType.BirthDate
+                        OrderType = SortType.Date
                     }
                 },
                 Search = new QuerySearch

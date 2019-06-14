@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Questionnaire.Data.Enums
+namespace Daily.Data.Enums
 {
     public enum SortType
     {
-        Name = 1,
-        BirthDate
+        Date = 1
     }
 }

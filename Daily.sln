@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questionnaire.Common", "Questionnaire\Questionnaire.Common\Questionnaire.Common.csproj", "{A682BD5F-C2C6-4D0E-9C6A-1B93E928439B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily.Common", "Daily\Daily.Common\Daily.Common.csproj", "{A682BD5F-C2C6-4D0E-9C6A-1B93E928439B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questionnaire.Data", "Questionnaire\Questionnaire.Data\Questionnaire.Data.csproj", "{B6A16244-716B-4295-8F5B-B82C77DECF2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily.Data", "Daily\Daily.Data\Daily.Data.csproj", "{B6A16244-716B-4295-8F5B-B82C77DECF2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questionnaire.Service", "Questionnaire\Questionnaire.Service\Questionnaire.Service.csproj", "{B3B61312-FABD-4CAB-8B8E-33F0746D4F0E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily.Service", "Daily\Daily.Service\Daily.Service.csproj", "{B3B61312-FABD-4CAB-8B8E-33F0746D4F0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questionnaire.Web", "Questionnaire\Questionnaire.Web\Questionnaire.Web.csproj", "{A225E8CB-B1C3-4BCC-92A2-63630BEF4BFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily.Web", "Daily\Daily.Web\Daily.Web.csproj", "{A225E8CB-B1C3-4BCC-92A2-63630BEF4BFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

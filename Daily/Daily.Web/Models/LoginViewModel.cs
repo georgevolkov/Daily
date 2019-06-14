@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace Questionnaire.Web.Models
+namespace Daily.Web.Models
 {
     public class LoginViewModel
     {

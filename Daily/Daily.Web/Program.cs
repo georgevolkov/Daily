@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Questionnaire.Web
+namespace Daily.Web
 {
     public class Program
     {

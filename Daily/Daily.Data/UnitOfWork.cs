@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Questionnaire.Data.Interfaces;
+using Daily.Data.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Questionnaire.Data
+namespace Daily.Data
 {
     public class UnitOfWork : IUnitOfWork
     {

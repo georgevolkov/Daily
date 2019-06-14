@@ -1,8 +1,8 @@
-﻿using Questionnaire.Data.Interfaces;
-using Questionnaire.Service.Query;
+﻿using Daily.Data.Interfaces;
+using Daily.Service.Query;
 using System.Threading.Tasks;
 
-namespace Questionnaire.Service.Interfaces
+namespace Daily.Service.Interfaces
 {
     public interface IBaseQueryService<TEntity, TModel, TSortType>
         where TEntity : class, IEntityBase, new()

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Questionnaire.Service.Models.Base
+namespace Daily.Service.Models.Base
 {
     public class BaseModel
     {

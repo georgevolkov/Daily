@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Questionnaire.Common.Mapping
+namespace Daily.Common.Mapping
 {
     public class Configuration
     {

@@ -1,6 +1,6 @@
-﻿using Questionnaire.Service.Enums;
+﻿using Daily.Service.Enums;
 
-namespace Questionnaire.Service.Query
+namespace Daily.Service.Query
 {
     public class QueryOrder<TOrderType>
     {

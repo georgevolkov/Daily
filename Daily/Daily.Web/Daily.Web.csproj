@@ -14,9 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Questionnaire.Common\Questionnaire.Common.csproj" />
-    <ProjectReference Include="..\Questionnaire.Data\Questionnaire.Data.csproj" />
-    <ProjectReference Include="..\Questionnaire.Service\Questionnaire.Service.csproj" />
+    <ProjectReference Include="..\Daily.Common\Daily.Common.csproj" />
+    <ProjectReference Include="..\Daily.Data\Daily.Data.csproj" />
+    <ProjectReference Include="..\Daily.Service\Daily.Service.csproj" />
   </ItemGroup>
 
 </Project>

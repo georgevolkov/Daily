@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Questionnaire.Web.Controllers.Base;
-using Questionnaire.Web.Models;
+using Daily.Web.Controllers.Base;
+using Daily.Web.Models;
 using System.Threading.Tasks;
 
-namespace Questionnaire.Web.Controllers
+namespace Daily.Web.Controllers
 {
     public class AccountController : BaseController
     {

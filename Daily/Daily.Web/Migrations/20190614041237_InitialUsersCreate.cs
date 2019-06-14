@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Questionnaire.Web.Migrations
+namespace Daily.Web.Migrations
 {
-    public partial class InitialUsers : Migration
+    public partial class InitialUsersCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

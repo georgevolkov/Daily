@@ -1,4 +1,4 @@
-﻿namespace Questionnaire.Service.Query
+﻿namespace Daily.Service.Query
 {
     public class QuerySearch
     {

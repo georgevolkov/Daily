@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Questionnaire.Data\Questionnaire.Data.csproj" />
-    <ProjectReference Include="..\Questionnaire.Service\Questionnaire.Service.csproj" />
+    <ProjectReference Include="..\Daily.Data\Daily.Data.csproj" />
+    <ProjectReference Include="..\Daily.Service\Daily.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>

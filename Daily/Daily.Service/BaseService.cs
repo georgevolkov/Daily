@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using Questionnaire.Data.Interfaces;
-using Questionnaire.Service.Interfaces;
+using Daily.Data.Interfaces;
+using Daily.Service.Interfaces;
 using System;
 
-namespace Questionnaire.Service
+namespace Daily.Service
 {
     public class BaseService : IBaseService
     {

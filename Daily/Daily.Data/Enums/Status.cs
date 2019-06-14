@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Questionnaire.Data.Enums
+namespace Daily.Data.Enums
 {
     public enum Status
     {

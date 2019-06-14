@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Questionnaire.Data.Interfaces
+namespace Daily.Data.Interfaces
 {
     public interface IUnitOfWork
     {

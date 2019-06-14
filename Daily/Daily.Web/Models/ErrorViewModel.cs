@@ -1,6 +1,6 @@
 using System;
 
-namespace Questionnaire.Web.Models
+namespace Daily.Web.Models
 {
     public class ErrorViewModel
     {

@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Questionnaire.Common;
-using Questionnaire.Web.Data;
-using Questionnaire.Web.Models;
+using Daily.Common;
+using Daily.Web.Data;
+using Daily.Web.Models;
 
-namespace Questionnaire.Web
+namespace Daily.Web
 {
     public class Startup
     {

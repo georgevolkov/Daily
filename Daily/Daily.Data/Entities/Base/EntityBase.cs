@@ -1,6 +1,6 @@
-﻿using Questionnaire.Data.Interfaces;
+﻿using Daily.Data.Interfaces;
 
-namespace Questionnaire.Data.Entities.Base
+namespace Daily.Data.Entities.Base
 {
     public class EntityBase : IEntityBase
     { }

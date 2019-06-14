@@ -1,12 +1,18 @@
-﻿@using Questionnaire.Web.Models
-@model AnswerViewModel
+﻿@using Daily.Web.Models
+@model DailyViewModel
 @{
-    ViewData["Title"] = "About answer";
+    ViewData["Title"] = "About daily";
 }
 
-<label asp-for="Answer.Name">Имя: @Html.DisplayFor(x => x.Answer.Name)</label><br />
-<label asp-for="Answer.Age">Возраст: @Html.DisplayFor(x => x.Answer.Age)</label><br />
-<label asp-for="Answer.BirthDate">Дата рождения: @Html.DisplayFor(x => x.Answer.BirthDate)</label><br />
-<label asp-for="Answer.Sex">Пол: @Html.DisplayFor(x => x.Answer.Sex)</label><br />
-<label asp-for="Answer.Status">Семейное положение: @Html.DisplayFor(x => x.Answer.Status)</label><br />
-<label asp-for="Answer.IsLikeProgramming">Любит программирование: @Html.DisplayFor(x => x.Answer.IsLikeProgramming)</label>
+<label asp-for="Daily.Date">Дата: 
+    @Html.DisplayFor(x => x.Daily.Date)</label><br />
+<label asp-for="Daily.Yesterday">Вчера: 
+    @Html.DisplayTextFor(x => x.Daily.Yesterday)</label><br />
+<label asp-for="Daily.Today">Сегодня: 
+    @Html.DisplayTextFor(x => x.Daily.Today)</label><br />
+<label asp-for="Daily.NotDone">Не сделано:
+    @Html.DisplayTextFor(x => x.Daily.NotDone)</label><br />
+<label asp-for="Daily.Problems">Проблемы:
+    @Html.DisplayTextFor(x => x.Daily.LinesOfCode)</label><br />
+<label asp-for="Daily.LinesOfCode">Строчки кода: 
+    @Html.DisplayTextFor(x => x.Daily.LinesOfCode)</label>

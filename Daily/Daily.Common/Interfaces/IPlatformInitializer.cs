@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Questionnaire.Common.Interfaces
+namespace Daily.Common.Interfaces
 {
     public interface IPlatformInitializer
     {

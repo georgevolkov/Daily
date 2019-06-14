@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Questionnaire.Data.Interfaces
+namespace Daily.Data.Interfaces
 {
     public interface IRepository { }
 

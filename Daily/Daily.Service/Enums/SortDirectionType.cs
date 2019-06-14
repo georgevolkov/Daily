@@ -1,4 +1,4 @@
-﻿namespace Questionnaire.Service.Enums
+﻿namespace Daily.Service.Enums
 {
     public enum SortDirectionType
     {

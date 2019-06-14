@@ -1,17 +1,13 @@
 ﻿using AutoMapper;
-using Questionnaire.Data.Entities;
-using Questionnaire.Service.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Daily.Service.Models;
 
-namespace Questionnaire.Common.Mapping
+namespace Daily.Common.Mapping
 {
     public class DataProfile : Profile
     {
         public DataProfile()
         {
-            CreateMap<Answer, AnswerModel>(MemberList.None).ReverseMap();
+            CreateMap<Data.Entities.Daily, DailyModel>(MemberList.None).ReverseMap();
         }
     }
 }

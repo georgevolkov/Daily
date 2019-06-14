@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Questionnaire.Common.Interfaces;
-using Questionnaire.Data;
-using Questionnaire.Data.Interfaces;
-using Questionnaire.Service.Interfaces;
-using Questionnaire.Service;
+using Daily.Common.Interfaces;
+using Daily.Data;
+using Daily.Data.Interfaces;
+using Daily.Service.Interfaces;
+using Daily.Service;
 
-namespace Questionnaire.Common
+namespace Daily.Common
 {
     public class PlatformInitializer : IPlatformInitializer
     {
@@ -28,7 +28,7 @@ namespace Questionnaire.Common
 
             // add scoped registrations
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<IAnswerService, AnswerService>();
+            services.AddScoped<IDailyService, DailyService>();
         }
 
         protected virtual void ConfigureDatabase(IServiceCollection services)
