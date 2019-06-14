@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Daily.Data.Enums
+﻿namespace Daily.Data.Enums
 {
+    /// <summary>
+    /// Тип сортировки ежедневки
+    /// </summary>
     public enum SortType
     {
-        Date = 1
+        /// <summary>
+        /// Сортировка по дате
+        /// </summary>
+        Date = 1,
     }
 }

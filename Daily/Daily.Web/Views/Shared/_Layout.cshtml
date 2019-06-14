@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>App</title>
+    <title>@ViewData["Title"]</title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="~/css/site.css" rel="stylesheet" />
     <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -29,10 +29,11 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li>
-                                <a id="brand" class="navbar-brand" asp-controller="Home" asp-action="Answer">Анкета</a>
+                                <a id="brand" class="navbar-brand" asp-controller="Home" asp-action="Daily">Анкета</a>
+                                <a id="brand" class="navbar-brand" asp-controller="Daily" asp-action="Index">Ежедневка</a>
                             </li>
                         }
-                        
+
                     </ul>
                     <div>
                         <input value="@ViewBag.SearchQuery" name="query" class="form-control" type="text" v-model="query" placeholder="Search">
